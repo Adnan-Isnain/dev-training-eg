@@ -19,6 +19,7 @@ router.get('/', function (req, res, next) {
 /* POST increase counter by 1. */
 router.post("/increase-counter", function (req, res, next) {
   const { id_soal, option } = req.body
+
   if (option) {
     const idxChoice = parseInt(option)
     const idx = data.findIndex(o => (o['problem-id'] === id_soal))
@@ -29,9 +30,17 @@ router.post("/increase-counter", function (req, res, next) {
     } else {
       salah += 1
     }
+  } else {
+    salah += 1
   }
 
-  res.redirect("/");
+  res.redirect(303, "/");
 });
+
+router.get("/reset-counter", (req, res) => {
+  benar = 0
+  salah = 0
+  res.redirect(303, "/")
+})
 
 module.exports = router;

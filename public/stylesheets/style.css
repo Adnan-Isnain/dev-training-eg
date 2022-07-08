@@ -21,9 +21,29 @@ a {
   margin-top: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-#jawab-soal {
-  margin-top: 20px;
+
+
+#button-form {
+  margin-top: 30px;
+  display: block;
+}
+
+#button-form button {
+  padding: 15px 20px;
+}
+
+#button-form a {
+  text-decoration: none;
+  color: inherit
+}
+
+#reset-counter button {
+  padding: 10px 30px;
+}
+
+#reset-counter a {
+  text-decoration: none;
+  color: inherit;
 }

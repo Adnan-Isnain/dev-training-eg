@@ -28,7 +28,10 @@
                 <%= option[1] %>
               </label>
               <% } %>
-                <button type="submit" form="soal-fisika" id="jawab-soal" style="display: block;">Jawab soal</button>
+                <div id="button-form">
+                  <button id="ganti-soal"><a href="/">Ganti Soal</a></button>
+                  <button type="submit" form="soal-fisika" id="jawab-soal">Jawab soal</button>
+                </div>
         </form>
       </div>
     </div>
@@ -38,6 +41,9 @@
         </h3>
         <h3>Jawaban salah : <%= salah %>
         </h3>
+      </div>
+      <div id="reset-counter">
+        <button><a href="/reset-counter">Reset Counter</a></button>
       </div>
     </div>
   </div>
