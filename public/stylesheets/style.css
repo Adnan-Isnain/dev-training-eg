@@ -6,3 +6,24 @@ body {
 a {
   color: #00B7FF;
 }
+
+.container {
+  display: flex;
+  margin: 0;
+}
+
+.container #left {
+  width: 80%;
+}
+
+.container #right {
+  width: 20%;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#jawab-soal {
+  margin-top: 20px;
+}

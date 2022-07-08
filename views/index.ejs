@@ -3,23 +3,43 @@
 
 <head>
   <title>
-    <%= title %>
+    Latihan Soal
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
-  <h1>
-    <%= title %>
-  </h1>
-  <div>
-    <p>Counter = <%= counter %>
-    </p>
-  </div>
-  <div>
-    <form method="POST" action="/increase-counter">
-      <input type="submit" value="Increase by 1">
-    </form>
+  <div class="container">
+    <div id="left">
+      <h1>Topik : <%= soal.topic %>
+      </h1>
+      <h3>Problem id : <%= soal["problem-id"] %>
+      </h3>
+      <div id="soal">
+        <%- soal['soal']['soal-text'] %>
+      </div>
+      <div id="options">
+        <form action="/increase-counter" method="post" id="soal-fisika">
+          <input name="id_soal" type="hidden" value="<%= soal['problem-id'] %>">
+          <% for(var i=0; i<soal['soal']['options'].length; i++) {%>
+            <% var option=soal['soal']['options'][i]; %>
+              <input type="radio" name="option" value="<%= option[2] %>">
+              <label>
+                <%= option[1] %>
+              </label>
+              <% } %>
+                <button type="submit" form="soal-fisika" id="jawab-soal" style="display: block;">Jawab soal</button>
+        </form>
+      </div>
+    </div>
+    <div id="right">
+      <div id="info">
+        <h3>Jawaban benar : <%= benar %>
+        </h3>
+        <h3>Jawaban salah : <%= salah %>
+        </h3>
+      </div>
+    </div>
   </div>
 </body>
 
